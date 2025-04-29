@@ -1,0 +1,68 @@
+﻿<Window x:Class="elit_app.Add"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:elit_app"
+        mc:Ignorable="d"
+        Title="Приймальна комісія" Height="350" Width="700">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <DockPanel Grid.Row="0" Margin="0,0,0,10" VerticalAlignment="Top">
+            <StackPanel Orientation="Horizontal" DockPanel.Dock="Left">
+                <Image Source="\\Mac\Home\Desktop\4 семестр\ТСПП\logo.png" Height="30" Margin="0,0,10,0"/>
+                <TextBlock Text="Приймальна комісія" FontSize="18" FontWeight="Bold" VerticalAlignment="Center"/>
+            </StackPanel>
+            <Button Content="Вихід" Background="DarkRed" Foreground="White"
+                    HorizontalAlignment="Right" DockPanel.Dock="Right" Padding="10,5" Click="ExitButton_Click"/>
+        </DockPanel>
+
+        <TextBlock Grid.Row="1" Text="Форма додавання абітурієнтів"
+                   FontSize="14" FontWeight="SemiBold" Margin="0,0,0,10"/>
+
+        <Border Grid.Row="2" BorderBrush="Gray" BorderThickness="1" Padding="15">
+            <StackPanel>
+                <TextBlock x:Name="NewStudentIdText" Text="Новий абітурієнт ID000002"
+                           FontWeight="Bold" Margin="0,0,0,10"/>
+
+                <WrapPanel Margin="0,0,0,10">
+                    <StackPanel Margin="5">
+                        <TextBlock Text="Прізвище*"/>
+                        <TextBox x:Name="LastNameBox" Width="200"/>
+                    </StackPanel>
+                    <StackPanel Margin="5">
+                        <TextBlock Text="Ім’я*"/>
+                        <TextBox x:Name="FirstNameBox" Width="200"/>
+                    </StackPanel>
+                </WrapPanel>
+
+                <WrapPanel Margin="0,0,0,10">
+                    <StackPanel Margin="5">
+                        <TextBlock Text="Середній бал іспиту*"/>
+                        <TextBox x:Name="GpaBox" Width="200"/>
+                    </StackPanel>
+                    <StackPanel Margin="5">
+                        <TextBlock Text="Номер НЗ*"/>
+                        <TextBox x:Name="SchoolNumberBox" Width="200"/>
+                    </StackPanel>
+                </WrapPanel>
+
+                <WrapPanel>
+                    <Button Content="Додати" Background="Green" Foreground="White"
+                            Padding="10,5" Click="AddButton_Click"/>
+                    <Button Content="Очистити" Background="LightGray" Foreground="Black"
+                            Padding="10,5" Margin="10,0,0,0" Click="ClearButton_Click"/>
+                </WrapPanel>
+
+                <TextBlock Text="* Поля обов’язкові до заповнення"
+                           FontStyle="Italic" Foreground="Gray" Margin="0,10,0,0"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>
+
